@@ -1,0 +1,20 @@
+<h1>New Tv Show</h1>
+
+<h3>Ingrese una Serie o Película nueva</h3>
+
+<%= form_with model: TvShow.new do |form| %>
+
+    <%= form.label :name, "Nombre" %>
+    <%= form.text_field :name, class: 'form-control' %>
+
+    <%= form.label :summary, "Resumen" %>
+    <%= form.text_area :summary, class: 'form-control' %>
+    <%= form.label :release_date, "Fecha" %>
+    <%= form.date_field :release_date, class: 'form-control'%>
+    <%= form.label :rating %>
+    <%= form.number_field :rating, step: '0.1', class: 'form-control'%>
+  <br>
+    <%= form.submit  "Enviar", class: "btn btn-success mt-3" %>
+<% end %>
+<br>
+<%= link_to 'Back Tv Show', tv_shows_path %>
